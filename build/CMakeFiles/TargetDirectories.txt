@@ -1,0 +1,3 @@
+/home/majid/Projects/cuda_kernal/build/CMakeFiles/rebuild_cache.dir
+/home/majid/Projects/cuda_kernal/build/CMakeFiles/cuda_kernal.dir
+/home/majid/Projects/cuda_kernal/build/CMakeFiles/edit_cache.dir

@@ -1,0 +1,25 @@
+project(cuda_kernal LANGUAGES CUDA CXX)
+cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
+
+set( CMAKE_INCLUDE_CURRENT_DIR ON )
+set( CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH})
+
+find_package(CUDA)
+if (CUDA_FOUND)
+    message("CUDA found, Running on GPU is possible")
+    set(CMAKE_CUDA_STANDARD 11)
+    set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+    set(CUDA_LINK_LIBRARIES_KEYWORD PUBLIC)
+    option(USE_CUDA "Use CUDA" ON)
+else()
+    message("CUDA not found, Can Not RUN on GPU!")
+endif()
+
+
+if(USE_CUDA)
+    add_executable(${PROJECT_NAME} src/kernal.cu)
+    #add_definitions(-DUSE_CUDA)
+		set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -O3 -gencode arch=compute_22)
+		target_compile_features(${PROJECT_NAME} PUBLIC cxx_range_for)
+		set_property(TARGET ${PROJECT_NAME}  PROPERTY CXX_STANDARD 17)
+endif()

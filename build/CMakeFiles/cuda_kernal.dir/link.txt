@@ -1,0 +1,1 @@
+/usr/bin/g++  CMakeFiles/cuda_kernal.dir/src/kernal.cu.o -o cuda_kernal  -L"/usr/local/cuda-10.1/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda-10.1/targets/x86_64-linux/lib" -lcudadevrt -lcudart_static -lrt -lpthread -ldl

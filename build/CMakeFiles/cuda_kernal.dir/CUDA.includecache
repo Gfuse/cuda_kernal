@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/majid/Projects/cuda_kernal/src/kernal.cu
+iostream
+-
+cuda.h
+-
+cuda_runtime.h
+-
+
